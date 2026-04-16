@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37111.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RifeZPhoneBridge.ConsoleTest", "RifeZPhoneBridge.ConsoleTest\RifeZPhoneBridge.ConsoleTest.csproj", "{81C6D216-E114-45C3-A621-C4A743C3EB20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RifeZPhoneBridge.Core", "RifeZPhoneBridge.Core\RifeZPhoneBridge.Core.csproj", "{707B8057-8A6E-4ADA-9585-47AC69C38E9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RifeZPhoneBridge.Host", "RifeZPhoneBridge.Host\RifeZPhoneBridge.Host.csproj", "{AA45BB5B-482D-49B1-9D5B-5DB425C11B20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RifeZPhoneBridge.Runtime", "RifeZPhoneBridge.Runtime\RifeZPhoneBridge.Runtime.csproj", "{386B189A-4811-40F0-AA91-69D95813A627}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RifeZPhoneBridge.DriverCompanion", "RifeZPhoneBridge.DriverCompanion\RifeZPhoneBridge.DriverCompanion.csproj", "{8BB08458-6BE3-4400-8751-F6B68B65F650}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RifeZPhoneBridge.ControlTest", "RifeZPhoneBridge.ControlTest\RifeZPhoneBridge.ControlTest.csproj", "{0C16A9BF-49BD-4B52-A0B2-F7F27095DAF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RifeZAudioBridge.App", "RifeZPhoneBridge.App\RifeZAudioBridge.App.csproj", "{3AB8299A-27C1-CEAF-8995-2A9C42DF2CD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81C6D216-E114-45C3-A621-C4A743C3EB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C6D216-E114-45C3-A621-C4A743C3EB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C6D216-E114-45C3-A621-C4A743C3EB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C6D216-E114-45C3-A621-C4A743C3EB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{707B8057-8A6E-4ADA-9585-47AC69C38E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707B8057-8A6E-4ADA-9585-47AC69C38E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707B8057-8A6E-4ADA-9585-47AC69C38E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707B8057-8A6E-4ADA-9585-47AC69C38E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA45BB5B-482D-49B1-9D5B-5DB425C11B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA45BB5B-482D-49B1-9D5B-5DB425C11B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA45BB5B-482D-49B1-9D5B-5DB425C11B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA45BB5B-482D-49B1-9D5B-5DB425C11B20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{386B189A-4811-40F0-AA91-69D95813A627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{386B189A-4811-40F0-AA91-69D95813A627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{386B189A-4811-40F0-AA91-69D95813A627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{386B189A-4811-40F0-AA91-69D95813A627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB08458-6BE3-4400-8751-F6B68B65F650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB08458-6BE3-4400-8751-F6B68B65F650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB08458-6BE3-4400-8751-F6B68B65F650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB08458-6BE3-4400-8751-F6B68B65F650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C16A9BF-49BD-4B52-A0B2-F7F27095DAF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C16A9BF-49BD-4B52-A0B2-F7F27095DAF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C16A9BF-49BD-4B52-A0B2-F7F27095DAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C16A9BF-49BD-4B52-A0B2-F7F27095DAF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB8299A-27C1-CEAF-8995-2A9C42DF2CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB8299A-27C1-CEAF-8995-2A9C42DF2CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB8299A-27C1-CEAF-8995-2A9C42DF2CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB8299A-27C1-CEAF-8995-2A9C42DF2CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66543320-54DD-4DBD-8DEB-8FD557163427}
+	EndGlobalSection
+EndGlobal

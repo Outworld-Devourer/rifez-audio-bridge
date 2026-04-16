@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.FlatBuffers" Version="25.2.10" />
+    <PackageReference Include="NAudio" Version="2.3.0" />
+    <PackageReference Include="Zeroconf" Version="3.7.16" />
+  </ItemGroup>
+
+</Project>

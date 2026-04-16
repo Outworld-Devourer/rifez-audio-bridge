@@ -1,0 +1,120 @@
+namespace RifeZ.PhoneAudio.Control;
+
+enum MessageType : byte {
+  NONE = 0,
+  HelloRequest,
+  HelloResponse,
+  PingRequest,
+  PongResponse,
+  StatusRequest,
+  StatusResponse,
+  StartStreamRequest,
+  StartStreamResponse,
+  DisconnectRequest,
+  DisconnectResponse,
+  StreamConfigRequest,
+  StreamConfigResponse,
+  ErrorResponse
+}
+
+enum ReceiverState : byte {
+  Unknown = 0,
+  Idle,
+  Discoverable,
+  Pairing,
+  Connected,
+  Streaming,
+  Reconnecting,
+  Error
+}
+
+enum SampleFormat : byte {
+  Unknown = 0,
+  PCM16
+}
+
+enum CodecType : byte {
+  Unknown = 0,
+  PCM
+}
+
+table HelloRequest {
+  client_name:string;
+}
+
+table HelloResponse {
+  receiver_name:string;
+}
+
+table PingRequest {
+}
+
+table PongResponse {
+}
+
+table StatusRequest {
+}
+
+table StatusResponse {
+  state:ReceiverState = Unknown;
+  device_name:string;
+  source_name:string;
+}
+
+table StartStreamRequest {
+}
+
+table StartStreamResponse {
+}
+
+table DisconnectRequest {
+}
+
+table DisconnectResponse {
+}
+
+table StreamConfigRequest {
+  sample_rate:uint = 48000;
+  channels:ubyte = 2;
+  sample_format:SampleFormat = PCM16;
+  codec:CodecType = PCM;
+  frame_samples:uint = 480;
+}
+
+table StreamConfigResponse {
+  accepted:bool = false;
+  sample_rate:uint = 48000;
+  channels:ubyte = 2;
+  sample_format:SampleFormat = PCM16;
+  codec:CodecType = PCM;
+  frame_samples:uint = 480;
+  reason:string;
+}
+
+table ErrorResponse {
+  reason:string;
+}
+
+union Payload {
+  HelloRequest,
+  HelloResponse,
+  PingRequest,
+  PongResponse,
+  StatusRequest,
+  StatusResponse,
+  StartStreamRequest,
+  StartStreamResponse,
+  DisconnectRequest,
+  DisconnectResponse,
+  StreamConfigRequest,
+  StreamConfigResponse,
+  ErrorResponse
+}
+
+table Envelope {
+  message_type:MessageType = NONE;
+  payload:Payload;
+}
+
+root_type Envelope;
+file_identifier "RFZ1";

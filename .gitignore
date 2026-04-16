@@ -1,0 +1,28 @@
+# General
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Secrets / signing
+*.jks
+*.keystore
+*.pfx
+*.snk
+
+# Android
+.gradle/
+**/build/
+local.properties
+*.apk
+*.aab
+
+# Visual Studio / .NET
+.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# JetBrains / Android Studio
+.idea/

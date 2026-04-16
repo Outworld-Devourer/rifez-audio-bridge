@@ -25,31 +25,27 @@ UninstallDisplayIcon={app}\{#MyAppExeName}
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
-Name: "startup"; Description: "Run RifeZ Audio Bridge at Windows startup"; GroupDescription: "Additional options:"; Flags: unchecked
-Name: "launchapp"; Description: "Launch RifeZ Audio Bridge after installation"; GroupDescription: "Post-install actions:"; Flags: checkedonce
-Name: "installdriver"; Description: "Install RifeZ virtual audio driver"; GroupDescription: "Additional options:"; Flags: checked
+
 
 [Files]
 ; Windows tray app payload
 Source: "..\..\release\windows\app\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 ; Driver payload staged separately under the install folder
-Source: "..\..\release\windows\driver\*"; DestDir: "{app}\driver"; Flags: ignoreversion recursesubdirs createallsubdirs
+;Source: "..\..\release\windows\driver\*"; DestDir: "{app}\driver"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{autoprograms}\RifeZ Audio Bridge"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\RifeZ Audio Bridge"; Filename: "{app}\{#MyAppExeName}"
 
 [Registry]
-Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "RifeZAudioBridge"; ValueData: """{app}\{#MyAppExeName}"""; Tasks: startup; Flags: uninsdeletevalue
+
 
 [Run]
 ; Optional driver install step - currently assumes INF is present in staged driver payload.
 ; Replace the INF name below if your staged driver file uses a different name.
-Filename: "{cmd}"; Parameters: "/C pnputil /add-driver ""{app}\driver\ComponentizedAudioSample.inf"" /install"; Flags: runhidden waituntilterminated; Tasks: installdriver
 
 ; Launch app after setup
-Filename: "{app}\{#MyAppExeName}"; Description: "Launch RifeZ Audio Bridge"; Flags: nowait postinstall skipifsilent; Tasks: launchapp
 
 [UninstallRun]
 ; Placeholder for future driver uninstall path if desired.

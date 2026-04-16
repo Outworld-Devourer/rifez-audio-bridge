@@ -1,36 +1,24 @@
 # Windows Installer
 
-## Purpose
-
 This folder contains the Windows installer work for RifeZ Audio Bridge.
-
-The intended installer should provide a polished setup flow for:
-
-- the Windows tray app
-- the Windows virtual audio driver
-
-## Current goals
-
-The installer should eventually support:
-
-- tray app installation
-- optional startup registration
-- driver installation
-- optional post-install launch
 
 ## Current status
 
-Installer implementation is still in progress.
+A first Inno Setup installer skeleton is present under:
 
-The main long-term requirement for a polished end-user driver install is:
+- `inno/RifeZAudioBridge.iss`
+
+The current installer is intended as a baseline for:
+
+- tray app installation
+- startup registration option
+- staged driver package inclusion
+- optional post-install launch
+
+## Notes
+
+The long-term polished end-user install experience still depends on:
 
 - production-grade driver signing
-
-## Planned contents
-
-This folder is intended to hold:
-
-- installer scripts
-- installer assets
-- helper scripts
-- release packaging logic
+- final driver installation and repair flow
+- installer failure handling improvements

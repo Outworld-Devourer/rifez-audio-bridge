@@ -17,7 +17,7 @@ public sealed class DriverControlPcmFrameSource : IPcmFrameSource
     public DriverControlPcmFrameSource(
         int expectedSampleRate,
         int expectedChannels,
-        string devicePath = @"\\.\RifeZPhoneBridge")
+        string devicePath = @"\\.\RifeZAudioBridge")
     {
         _devicePath = devicePath;
 

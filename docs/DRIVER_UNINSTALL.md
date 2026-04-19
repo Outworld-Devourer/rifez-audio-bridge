@@ -1,7 +1,3 @@
-
-## `docs/DRIVER_UNINSTALL.md`
-
-```md
 # Driver Uninstall
 
 ## Purpose

@@ -19,8 +19,14 @@ local.properties
 
 # Visual Studio / .NET
 .vs/
+windows/driver/**/x64/
+windows/driver/**/Debug/
+windows/driver/**/Release/
+windows/driver/**/ARM64/
+windows/driver/**/.vs/
 **/bin/
 **/obj/
+**/x64/
 *.user
 *.suo
 

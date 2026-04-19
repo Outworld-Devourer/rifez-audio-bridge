@@ -9,6 +9,7 @@ This folder contains the Windows virtual audio driver source, prepared evaluatio
 - `audio/sysvad/` – SYSVAD-based driver source tree
 - `wil/` – required WIL dependency subtree
 - `package/` – prepared driver package for evaluation installs
+- `package.cer` - the corespondig auto generated certificate when building the driver
 - `scripts/` – install, reinstall, and uninstall helper scripts
 
 ## Important source layout note

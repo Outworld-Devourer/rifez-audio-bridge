@@ -1,4 +1,5 @@
 import java.util.Properties
+
 val localProperties = Properties().apply {
     val localFile = rootProject.file("local.properties")
     if (localFile.exists()) {
@@ -6,10 +7,17 @@ val localProperties = Properties().apply {
     }
 }
 
-val rifezStoreFile = localProperties.getProperty("RIFEZ_STORE_FILE")
-val rifezStorePassword = localProperties.getProperty("RIFEZ_STORE_PASSWORD")
-val rifezKeyAlias = localProperties.getProperty("RIFEZ_KEY_ALIAS")
-val rifezKeyPassword = localProperties.getProperty("RIFEZ_KEY_PASSWORD")
+val signingProperties = Properties().apply {
+    val signingFile = file(System.getProperty("user.home") + "\\.rifez\\rifez-signing.properties")
+    if (signingFile.exists()) {
+        signingFile.inputStream().use { load(it) }
+    }
+}
+
+val rifezStoreFile = signingProperties.getProperty("RIFEZ_STORE_FILE")
+val rifezStorePassword = signingProperties.getProperty("RIFEZ_STORE_PASSWORD")
+val rifezKeyAlias = signingProperties.getProperty("RIFEZ_KEY_ALIAS")
+val rifezKeyPassword = signingProperties.getProperty("RIFEZ_KEY_PASSWORD")
 
 plugins {
     alias(libs.plugins.android.application)
@@ -18,6 +26,7 @@ plugins {
 
 android {
     namespace = "com.rifez.phoneaudio"
+
     compileSdk {
         version = release(36)
     }
@@ -31,12 +40,20 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
     signingConfigs {
         create("release") {
-            storeFile = file(rifezStoreFile)
-            storePassword = rifezStorePassword
-            keyAlias = rifezKeyAlias
-            keyPassword = rifezKeyPassword
+            if (
+                !rifezStoreFile.isNullOrBlank() &&
+                !rifezStorePassword.isNullOrBlank() &&
+                !rifezKeyAlias.isNullOrBlank() &&
+                !rifezKeyPassword.isNullOrBlank()
+            ) {
+                storeFile = file(rifezStoreFile)
+                storePassword = rifezStorePassword
+                keyAlias = rifezKeyAlias
+                keyPassword = rifezKeyPassword
+            }
         }
     }
 
@@ -51,10 +68,12 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     buildFeatures {
         compose = true
     }
@@ -63,25 +82,25 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.10.0")
+
     implementation(libs.androidx.activity.compose)
+
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+
+    implementation("com.google.flatbuffers:flatbuffers-java:24.3.25")
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.graphics)
-    implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.10.0")
-    implementation("com.google.flatbuffers:flatbuffers-java:24.3.25")
 }

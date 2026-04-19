@@ -8,11 +8,21 @@
 
 ## Windows
 
-1. Install the Windows virtual audio driver.
-2. Launch the Windows tray app.
-3. Confirm the tray app is running.
-4. Set the RifeZ virtual audio device as the Windows output device if needed.
-5. Wait for the tray app to connect and start streaming, or use `Start Streaming`.
+1. Install the Windows tray app.
+2. Install the Windows virtual audio driver using the current evaluation/test-mode workflow.
+3. Launch the Windows tray app.
+4. Confirm the tray app is running.
+5. Set the RifeZ virtual audio device as the Windows output device if needed.
+6. Wait for the tray app to connect and start streaming, or use `Start Streaming`.
+
+## Important note
+
+The current driver installation path is evaluation-oriented and may require test mode, Secure Boot changes, administrative privileges, and reboot-aware reinstall steps.
+
+See:
+
+- `docs/DRIVER_INSTALL_TEST_MODE.md`
+- `docs/DRIVER_UNINSTALL.md`
 
 ## Expected behavior
 

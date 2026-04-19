@@ -41,12 +41,13 @@ Current notes:
 - based on SYSVAD
 - current demo focuses on a single endpoint
 - driver behavior is stable enough for demo use
+- the current repo baseline supports driver install from the repo package and evaluation scripts
 - some driver improvements are intentionally deferred
 
 Known later-stage items include:
 
-- preferred default install format at 16-bit / 48 kHz
 - further robustness work for short Windows system sounds / notification sounds
+- production-grade signing and public-friendly installation flow
 
 ### Windows tray companion app
 

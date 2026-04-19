@@ -8,7 +8,7 @@ It combines three parts:
 - a Windows tray companion app
 - an Android receiver app
 
-The current goal is a stable demo product for fast setup audio playback from a Windows PC to an Android-based receiver device over Wi-Fi.
+The current goal is a stable demo/evaluation product for fast setup audio playback from a Windows PC to an Android-based receiver device over Wi-Fi.
 
 ## Current components
 
@@ -59,6 +59,22 @@ The current demo flow is:
 3. run the Windows tray app
 4. select the RifeZ virtual audio device in Windows
 5. stream Windows audio to the Android receiver over Wi-Fi
+
+## Important Windows driver note
+
+The current Windows driver workflow is intended for:
+
+- internal development
+- controlled demo setups
+- OEM / technical evaluation
+
+It is not yet the final public end-user installation path.
+
+For the current driver workflow, including test mode requirements and reboot-aware reinstall steps, see:
+
+- `docs/DRIVER_INSTALL_TEST_MODE.md`
+- `docs/DRIVER_DEV_SIGNING.md`
+- `docs/DRIVER_UNINSTALL.md`
 
 ## Repository structure
 

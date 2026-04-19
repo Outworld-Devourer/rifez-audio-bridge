@@ -35,6 +35,7 @@ The system is intended to demonstrate Windows-to-Android Wi-Fi audio streaming u
 - virtual playback endpoint
 - driver-side PCM capture path
 - user-mode bridge path for audio forwarding
+- repo-contained package and evaluation install workflow
 - stable demo use baseline on tested setup
 
 ## Verified demo behaviors
@@ -52,18 +53,21 @@ The following behaviors have been validated during the demo stabilization cycle:
 - PC reboot during active streaming is recoverable
 - auto-restore behavior on the Windows side works correctly
 - embedded Windows assets behave correctly outside debug-only path assumptions
+- repo-contained driver package can be installed and reinstalled in the current evaluation workflow
 
 ## Repository and packaging status
 
 This release also establishes the first combined product repository baseline.
 
 Included repository work:
+
 - combined repo structure for Android, Windows app, and driver
 - baseline documentation
 - architecture documentation
 - install documentation
 - release payload staging
 - roadmap and known issues tracking
+- driver evaluation scripts
 
 ## Known limitations
 
@@ -71,19 +75,18 @@ The following items are known and intentionally deferred:
 
 - polished end-user Windows driver install flow is not complete yet
 - production-grade driver signing is still pending
-- Windows driver currently defaults to 16-bit / 44.1 kHz instead of the preferred 16-bit / 48 kHz configuration
 - short Windows system sounds / notification sounds can still trigger jitter or lag spikes
 - legacy transport/bootstrap pieces are intentionally still retained for stability
 - Google Play Store distribution is not currently targeted
+- driver reinstall may require reboot between removal and reinstall if root-device removal is deferred until reboot
 
 ## Intended use
 
-This release is intended as a stable internal/demo baseline rather than a final consumer/public release.
+This release is intended as a stable internal/demo/OEM-evaluation baseline rather than a final consumer/public release.
 
 ## Next planned work
 
 - production-grade driver signing path
 - polished Windows installer flow including driver installation
-- driver default format tuning
 - further driver robustness work around Windows notification/system sounds
 - final packaging and release polish
